@@ -71,16 +71,16 @@ while True:
                 
             
             # set the cell based on the rule
-            if current_cells[x][y] == '■' and ( num_neighbors == 5 or num_neighbors > 5) :
+            if current_cells[x][y] == '■' and ( num_neighbors == 2 or num_neighbors == 3) :
                 # Living cells with 2 or 3 neighbors stay alive:
                 next_cells[x][y] = '■'
                 
-            elif current_cells[x][y] == '□' and num_neighbors >= 6:
+            elif current_cells[x][y] == '□' and num_neighbors == e:
                 # Dead cells with 3 neighbors become alive:
                 next_cells[x][y] = '■'
             
             else:
-                current_cells[x][y] == '□'
+                next_cells[x][y] == '□'
             
     time.sleep(1) # Add a 1-second pause to reduce flickering.
                 
